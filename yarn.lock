@@ -1415,7 +1415,7 @@
 "@offline-protocol/id-react-native@file:../sdk/offline-protocol-id-react-native-0.1.0.tgz":
   version "0.1.0"
   resolved "file:../sdk/offline-protocol-id-react-native-0.1.0.tgz"
-  integrity sha512-UOz5stsf/tLOo2xKWU03USuDjpT2l0DQdODUaO0jGDcYO0JMJRieQ6zPZZGLpa8pT/vbiibwJR+mS9ijTE/77A==
+  integrity sha512-pnecmXSd7AqYHGDHQy4kjsm+YwZE3IrG+oTVBL//MHzJZuEy85hSc+h+vAfwY5kxbpOp1+dcpE0RFXm8e1J2MQ==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "test-app",
-    "slug": "test-app",
+    "name": "Offline ID",
+    "slug": "offline-id",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -40,6 +40,9 @@
         }
       ]
     ],
+    "extra": {
+      "apiKey": "7b9bdb1d-6115-4efa-9538-64b0ca19a707"
+    },
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
