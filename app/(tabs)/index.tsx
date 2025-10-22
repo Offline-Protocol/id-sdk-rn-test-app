@@ -25,7 +25,7 @@ export default function HomeScreen() {
       >
         <ThemedView style={styles.titleContainer}>
           <ThemedText type="title">
-            Welcome {user?.username || "Friend"}!
+            Welcome {user ? user.username : "Friend"}!
           </ThemedText>
           <HelloWave />
         </ThemedView>

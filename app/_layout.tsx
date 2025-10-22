@@ -20,9 +20,11 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <OfflineAppProvider apiKey="7b9bdb1d-6115-4efa-9538-64b0ca19a707">
+    <OfflineAppProvider projectId="proj_projectapollo">
       <SafeAreaProvider>
-        <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <ThemeProvider
+          value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+        >
           <Stack>
             {/* Removed guard route */}
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
