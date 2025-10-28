@@ -20,7 +20,7 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <OfflineAppProvider projectId="proj_projectapollo">
+    <OfflineAppProvider projectId="proj_firstprojectuq6o0">
       <SafeAreaProvider>
         <ThemeProvider
           value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
