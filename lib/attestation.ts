@@ -1,4 +1,4 @@
-import type { AttestationProviders } from '@offline-protocol/id-react-native';
+import type { AttestationProviders, AttestationStatus } from '@offline-protocol/id-react-native';
 import Constants from 'expo-constants';
 import { requireOptionalNativeModule } from 'expo-modules-core';
 import { Platform } from 'react-native';
@@ -19,8 +19,14 @@ const native = Platform.OS === 'ios'
   : null;
 
 let status = 'No attestation attempted yet. Verify an email code to send one.';
+let result: AttestationStatus | null = null;
 const listeners = new Set<() => void>();
 export const getAttestationStatus = () => status;
+export const getAttestationResult = () => result;
+export function resetAttestationStatus() {
+  result = null;
+  report('No attestation attempted yet. Verify an email code to send one.');
+}
 export function subscribeAttestationStatus(listener: () => void) {
   listeners.add(listener);
   return () => { listeners.delete(listener); };
@@ -63,6 +69,10 @@ async function nativeCall<T>(step: string, call: () => Promise<T>, success: stri
 // Keep this object stable: changing providers resets the SDK's attestor.
 // Hashes arrive already SHA-256 hashed and base64 encoded by the SDK.
 export const attestationProviders: AttestationProviders = {
+  onStatus: (next) => {
+    result = next;
+    report(next.message);
+  },
   ios: {
     isSupported: checkAppAttestSupport,
     generateKey: () => nativeCall('Generating key', () => native!.generateKey(), 'Key generated'),

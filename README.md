@@ -64,8 +64,11 @@ matches it against the registered bundle IDs and allowed Apple team IDs.
 
 **A successful login in report mode does not prove the attestation passed.**
 The SDK can fall back to sending no proof when the native provider or registration
-fails, and the server can accept that sign-in. The on-screen status reports native
-generation only; the server metric is the verification result. Metro also prints
+fails, and the server can accept that sign-in. When signed in, Home shows the
+server's result: **Verified**, **Failed**, **Unavailable**, or **Not checked**.
+Older servers without a result show **Proof submitted — verification unconfirmed**;
+restored sessions without a result show **Unknown**. Use Home's **Logout** button
+and sign in again to check a fresh proof. Metro also prints
 native progress/errors with `[App Attest]` and SDK warnings with
 `Attestation unavailable`, without logging proof bytes, key IDs, OTPs or tokens.
 
