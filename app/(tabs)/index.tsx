@@ -8,6 +8,7 @@ import ParallaxScrollView from "@/components/parallax-scroll-view";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 import { useAuth } from "@offline-protocol/id-react-native";
+import { AttestationStatus } from "@/components/attestation-status";
 
 export default function HomeScreen() {
   const { user, loginWithModal } = useAuth();
@@ -38,6 +39,7 @@ export default function HomeScreen() {
         <TouchableOpacity onPress={loginWithModal} style={styles.cta}>
           <Text style={styles.ctaText}>Login</Text>
         </TouchableOpacity>
+        <AttestationStatus />
       </ParallaxScrollView>
     </SafeAreaView>
   );

@@ -1,0 +1,7 @@
+{
+  "name": "offline-test-app-attest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "iOS App Attest bridge for the Offline ID test app",
+  "license": "MIT"
+}
