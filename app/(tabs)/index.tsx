@@ -8,9 +8,11 @@ import ParallaxScrollView from "@/components/parallax-scroll-view";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 import { useAuth } from "@offline-protocol/id-react-native";
+import { AttestationStatus } from "@/components/attestation-status";
+import { resetAttestationStatus } from "@/lib/attestation";
 
 export default function HomeScreen() {
-  const { user, loginWithModal } = useAuth();
+  const { user, loginWithModal, logout } = useAuth();
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -35,9 +37,14 @@ export default function HomeScreen() {
         >
           <Text>save location</Text>
         </TouchableOpacity> */}
-        <TouchableOpacity onPress={loginWithModal} style={styles.cta}>
-          <Text style={styles.ctaText}>Login</Text>
+        <TouchableOpacity
+          accessibilityRole="button"
+          onPress={user ? () => { logout(); resetAttestationStatus(); } : loginWithModal}
+          style={styles.cta}
+        >
+          <Text style={styles.ctaText}>{user ? "Logout" : "Login"}</Text>
         </TouchableOpacity>
+        <AttestationStatus />
       </ParallaxScrollView>
     </SafeAreaView>
   );

@@ -10,7 +10,11 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.aditipolkam.offline-id"
+      "bundleIdentifier": "com.aditipolkam.offline-id",
+      "entitlements": {
+        "com.apple.developer.devicecheck.appattest-environment": "development"
+      },
+      "appleTeamId": "4NZGXQRKBG"
     },
     "android": {
       "adaptiveIcon": {
@@ -42,7 +46,7 @@
       ]
     ],
     "extra": {
-      "apiKey": "7b9bdb1d-6115-4efa-9538-64b0ca19a707"
+      "appId": "proj_firstprojectuq6o0"
     },
     "experiments": {
       "typedRoutes": true,
